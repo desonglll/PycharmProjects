@@ -1,6 +1,6 @@
 import json
 
-import is_json_empty
+from . import is_json_empty
 
 
 def show_students(file_path):
@@ -10,7 +10,8 @@ def show_students(file_path):
         with open(file_path, "r") as file:
             data = json.load(file)
             for student in data:
+                index = student["index"]
                 name = student["name"]
                 gender = student["gender"]
                 age = student["age"]
-                print(f"name:{name}, gender:{gender}, age:{age}")
+                print(f"index:{index}, name:{name}, gender:{gender}, age:{age}")

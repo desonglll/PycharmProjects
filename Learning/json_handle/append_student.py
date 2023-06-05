@@ -1,5 +1,5 @@
 import json
-import is_json_empty
+from . import is_json_empty
 
 
 def append_student(file_path):
@@ -15,11 +15,13 @@ def append_student(file_path):
             break
         gender = str(input("gender:"))
         age = int(input("age:"))
+        index = int(input("index:"))
 
         student = {
             "name": name,
             "gender": gender,
-            "age": age
+            "age": age,
+            "index": index
         }
         data.append(student)
     with open(file_path, "w") as file:
